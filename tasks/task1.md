@@ -26,3 +26,17 @@ Keep everything else word for word.
    Show brand names as text only; don't generate images of other brands' products.
 6. Add a small "AI-generated" label and "#ad" text. Close CapCut, save the draft and
    copy it into CapCut's projects folder.
+
+## Assets (in assets/task1/)
+- `avatar.jpg`: Reference Avatar (AI-generated). Use it for the Flow character.
+- `inspo.mp4`: inspo video (126 s, 9:16). B-roll images for JIYU are not here yet;
+  if missing, ask me or make the JIYU B-roll from the inspo's JIYU jar shots as reference.
+
+## Style notes from the inspo
+- Handheld selfie walking slowly down a Costco warehouse aisle (tall orange/blue
+  shelving, bright overhead lights). Use the same setting, with our avatar.
+- She holds up each product while naming it. Generic, unbranded lookalike products
+  are fine; add the real names and prices as on-screen text.
+- Captions: 1-3 words at a time, bold white serif, centered on the chest.
+- Pace is fast: the whole script runs about 2 minutes. Aim for 2:00-2:30 total.
+  Speed up clips in CapCut (about 1.2-1.4x) and trim pauses between lines.
