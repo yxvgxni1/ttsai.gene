@@ -19,6 +19,10 @@ python3 -m venv venv-capcut
 
 echo
 echo "Installed to $DIR"
-echo "Add this to your shell profile (~/.zshrc or ~/.bashrc):"
-echo "  export CAPCUT_MCP_DIR=\"$DIR\""
-echo "Then open Claude Code in this repo and run /mcp to confirm 'capcut' is connected."
+if command -v claude >/dev/null; then
+  claude mcp add capcut -e PYTHONPATH="$DIR" -- "$DIR/venv-capcut/bin/python" "$DIR/mcp_server.py"
+  echo "Registered 'capcut' with Claude Code. Run claude, then /mcp to confirm."
+else
+  echo "Claude Code not found. Install it, then run:"
+  echo "  claude mcp add capcut -e PYTHONPATH=\"$DIR\" -- \"$DIR/venv-capcut/bin/python\" \"$DIR/mcp_server.py\""
+fi

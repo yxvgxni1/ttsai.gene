@@ -13,14 +13,27 @@ Everything runs on **your own computer** (the one with CapCut installed).
 - Claude Code CLI or desktop app
 
 ## Setup
-1. Clone this repo on your computer and run:
-   ```bash
-   ./scripts/setup-capcut-mcp.sh
-   ```
-2. Add the line it prints to your shell profile, e.g.
-   `export CAPCUT_MCP_DIR="$HOME/VectCutAPI"`, then restart your terminal.
-3. Start Claude Code in this repo. The `.mcp.json` here registers the `capcut`
-   server; approve it when asked, then run `/mcp` to check it's connected.
+
+### Mac / Linux
+Run `./scripts/setup-capcut-mcp.sh` from this repo, then start `claude` here and run `/mcp`.
+
+### Windows (Command Prompt)
+```
+winget install Python.Python.3.12
+winget install Gyan.FFmpeg
+```
+Open a new terminal, then:
+```
+cd %USERPROFILE%
+git clone https://github.com/sun-guannan/VectCutAPI.git
+cd VectCutAPI
+python -m venv venv-capcut
+venv-capcut\Scripts\pip install -r requirements.txt -r requirements-mcp.txt
+copy config.json.example config.json
+cd %USERPROFILE%\ttsai.gene
+claude mcp add capcut -e PYTHONPATH=%USERPROFILE%\VectCutAPI -- %USERPROFILE%\VectCutAPI\venv-capcut\Scripts\python.exe %USERPROFILE%\VectCutAPI\mcp_server.py
+```
+Start `claude` in this repo and run `/mcp`; `capcut` should show 11 tools.
 
 ## Using it
 Ask Claude things like:
